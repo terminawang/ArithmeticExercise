@@ -1,44 +1,15 @@
 package com.finance.geex.testdemo;
 
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.LauncherActivity;
-import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.net.http.SslError;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.util.Patterns;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.webkit.DownloadListener;
-import android.webkit.SslErrorHandler;
-import android.webkit.URLUtil;
-import android.webkit.ValueCallback;
-import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.finance.geex.testdemo.arithmetic.BackTrackArithmetic;
-import com.finance.geex.testdemo.arithmetic.RecursionMultiplication;
 
-import java.io.File;
+import com.finance.geex.testdemo.arithmetic.backtrack.NQueensProblem;
+
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -90,10 +61,27 @@ public class TestActivity extends AppCompatActivity {
 //        Toast.makeText(this,String.valueOf(recursion),Toast.LENGTH_LONG).show();
 
 
-        int[] nums = {1,2};
-        BackTrackArithmetic backTrackArithmetic = new BackTrackArithmetic();
-        List<List<Integer>> permute = backTrackArithmetic.permute(nums);
-        Toast.makeText(this,String.valueOf(permute.size()),Toast.LENGTH_LONG).show();
+//        int[] nums = {1,2};
+//        BackTrackArithmetic backTrackArithmetic = new BackTrackArithmetic();
+//        List<List<Integer>> permute = backTrackArithmetic.permute(nums);
+//        Toast.makeText(this,String.valueOf(permute.size()),Toast.LENGTH_LONG).show();
+
+
+        NQueensProblem nQueensProblem = new NQueensProblem();
+        List<List<String>> lists = nQueensProblem.solveNQueens(8);
+        List<String> list1 = lists.get(0);
+        for (int i = 0; i < list1.size(); i++) {
+            String s = list1.get(i);
+            System.out.println(s);
+        }
+//        for (int i = 0; i < lists.size(); i++) {
+//            List<String> list = lists.get(i);
+//            for (int j = 0; j < list.size(); j++) {
+//                String s = list.get(j);
+//                System.out.println(s);
+//            }
+//            System.out.println();
+//        }
 
 
 //        timer = new Timer();

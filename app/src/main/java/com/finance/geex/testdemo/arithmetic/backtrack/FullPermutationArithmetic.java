@@ -1,4 +1,4 @@
-package com.finance.geex.testdemo.arithmetic;
+package com.finance.geex.testdemo.arithmetic.backtrack;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -7,10 +7,10 @@ import java.util.Vector;
 /**
  * Created on 2020/6/30 13:56.
  * 回溯算法
- *
+ * 全排列
  * @author Geex302
  */
-public class BackTrackArithmetic {
+public class FullPermutationArithmetic {
 
     List<List<Integer>> res = new LinkedList<>();
 
@@ -29,8 +29,8 @@ public class BackTrackArithmetic {
 
     /**
      *
-     * @param nums
-     * @param track
+     * @param nums  可选择列表
+     * @param track  路径
      */
     private void backTrack(int[] nums,LinkedList<Integer> track){
 
@@ -57,6 +57,11 @@ public class BackTrackArithmetic {
         }
 
     }
+
+
+
+
+
 
 
 }
